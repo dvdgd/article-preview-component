@@ -1,0 +1,116 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100svh;
+  background-color: var(--light-grayish-blue);
+
+  font-family: 'Manrope';
+  font-weight: 500;
+  font-size: .83rem;
+  line-height: 1.5;
+}
+
+figure {
+  display: block;
+  max-width: 90%;
+}
+
+main {
+  margin: 1rem;
+}
+
+article h1 {
+  font-size: 1rem;
+  color: var(--very-dark-grayish-blue);
+
+  margin-bottom: 1rem;
+}
+
+article > div > p {
+  color: var(--desaturated-dark-blue);
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  background-color: var(--white);
+
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
+article > img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 200px;
+}
+
+article > div {
+  padding: 1.8rem;
+  padding-bottom: 0;
+}
+
+article footer {
+  position: relative;
+}
+
+article footer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article footer > div:not(.share-container) {
+  margin: 1.5rem;
+}
+
+article div.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+article div.author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+article div.author p {
+  font-weight: 700;
+}
+
+article div.author time {
+  color: var(--grayish-blue);
+}
+
+article button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-grayish-blue);
+  cursor: pointer;
+
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  z-index: 1;
+}
+
+article .share-container {
+  display: none;
+}
+
+/* article .share-container.active {
+  display: flex;
+
+  position: absolute;
+  background-color: var(--desaturated-dark-blue);
+  width: 100%;
+  top: 0;
+  height: 100%;
+} */
