@@ -11,6 +11,7 @@ body {
   font-weight: 500;
   font-size: .83rem;
   line-height: 1.5;
+  transition: .3s;
 }
 
 figure {
@@ -56,16 +57,42 @@ article > div {
 
 article footer {
   position: relative;
+
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+article .share-container {
+  display: none;
+}
+
+article .share-container.active {
+  display: flex;
+  justify-content: start;
+  padding: inherit;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-color: var(--very-dark-grayish-blue);
+  color: var(--grayish-blue);
+  
+  font-size: .95rem;
+  letter-spacing: .3rem;
+  gap: 1rem;
+  text-transform: uppercase;
+  opacity: 100;
+
+  transition: opacity .6s ease;
 }
 
 article footer > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-article footer > div:not(.share-container) {
-  margin: 1.5rem;
 }
 
 article div.author {
@@ -88,29 +115,32 @@ article div.author time {
   color: var(--grayish-blue);
 }
 
-article button {
+article div.profile-container button {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--light-grayish-blue);
   cursor: pointer;
-
+  
   border-radius: 50%;
   width: 35px;
   height: 35px;
   z-index: 1;
+  transition: background-color .3s ease;
 }
 
-article .share-container {
-  display: none;
-}
-
-/* article .share-container.active {
-  display: flex;
-
-  position: absolute;
+article div.profile-container button:hover,
+article div.profile-container button:hover svg path,
+article div.profile-container button.active,
+article div.profile-container button.active svg path {
+  fill: var(--white);
   background-color: var(--desaturated-dark-blue);
-  width: 100%;
-  top: 0;
-  height: 100%;
-} */
+  transition: background-color .3s ease;
+}
+
+article div.profile-container button.active:hover,
+article div.profile-container button.active:hover svg path {
+  fill: var(--desaturated-dark-blue);
+  background-color: var(--light-grayish-blue);
+  transition: background-color .3s ease;
+}
