@@ -152,6 +152,12 @@ article .share-container.active {
   transition: opacity .6s ease;
 }
 
+article .share-container.active ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 @media (min-width: 970px) {
   article {
     flex-direction: row;
