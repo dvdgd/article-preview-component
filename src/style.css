@@ -43,7 +43,8 @@ article {
   --border-radius-lenght: .5rem;
 
   border-radius: var(--border-radius-lenght);
-  box-shadow: 0 5px 30px rgba(0, 0, 0, .05);
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, .1); */
+  box-shadow: hsla(212, 23%, 69%, 30%) 0px 10px 40px -10px;
 }
 
 article>img {
