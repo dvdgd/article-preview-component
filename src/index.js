@@ -6,7 +6,6 @@ document.querySelector('button').addEventListener('click', () => {
   button.classList.toggle('active');
 });
 
-// handle click outside of share container to close it
 document.addEventListener('click', (e) => {
   const shareContainer = document.querySelector('.share-container');
   const button = document.querySelector('button');

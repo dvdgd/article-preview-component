@@ -16,21 +16,21 @@ body {
 
 figure {
   display: block;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 main {
   margin: 1rem;
 }
 
-article h1 {
+header h1 {
   font-size: 1rem;
   color: var(--very-dark-grayish-blue);
 
   margin-bottom: 1rem;
 }
 
-article > div > p {
+header p {
   color: var(--desaturated-dark-blue);
 }
 
@@ -40,56 +40,30 @@ article {
   max-width: 320px;
   background-color: var(--white);
 
-  border-radius: .5rem;
-  overflow: hidden;
+  --border-radius-lenght: .5rem;
+
+  border-radius: var(--border-radius-lenght);
 }
 
-article > img {
+article>img {
   object-fit: cover;
   max-width: 100%;
   height: 200px;
+  border-radius: var(--border-radius-lenght) var(--border-radius-lenght) 0 0;
 }
 
-article > div {
-  padding: 1.8rem;
-  padding-bottom: 0;
+article header {
+  margin: 2rem 1.8rem;
+  margin-bottom: .5rem
 }
 
 article footer {
   position: relative;
-
   padding: 1rem 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: .5rem;
 }
 
-article .share-container {
-  display: none;
-}
-
-article .share-container.active {
-  display: flex;
-  justify-content: start;
-  padding: inherit;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-  background-color: var(--very-dark-grayish-blue);
-  color: var(--grayish-blue);
-  
-  font-size: .95rem;
-  letter-spacing: .3rem;
-  gap: 1rem;
-  text-transform: uppercase;
-  opacity: 100;
-
-  transition: opacity .6s ease;
-}
-
-article footer > div {
+article footer>div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,13 +89,13 @@ article div.author time {
   color: var(--grayish-blue);
 }
 
-article div.profile-container button {
+button.share-button {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--light-grayish-blue);
   cursor: pointer;
-  
+
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -129,18 +103,116 @@ article div.profile-container button {
   transition: background-color .3s ease;
 }
 
-article div.profile-container button:hover,
-article div.profile-container button:hover svg path,
-article div.profile-container button.active,
-article div.profile-container button.active svg path {
+button.share-button:hover,
+button.share-button:hover svg path,
+button.share-button.active,
+button.share-button.active svg path {
   fill: var(--white);
   background-color: var(--desaturated-dark-blue);
   transition: background-color .3s ease;
 }
 
-article div.profile-container button.active:hover,
-article div.profile-container button.active:hover svg path {
+button.share-button.active:hover,
+button.share-button.active:hover svg path {
   fill: var(--desaturated-dark-blue);
   background-color: var(--light-grayish-blue);
   transition: background-color .3s ease;
+}
+
+article .share-container {
+  display: none;
+}
+
+article .share-container.active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding: 1rem 1.8rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  padding-right: 30%;
+
+  background-color: var(--very-dark-grayish-blue);
+  color: var(--grayish-blue);
+  border-radius: 0 0 var(--border-radius-lenght) var(--border-radius-lenght);
+
+  font-size: .8rem;
+  letter-spacing: .3rem;
+  gap: 1rem;
+  text-transform: uppercase;
+  opacity: 100;
+
+  transition: opacity .6s ease;
+}
+
+@media (min-width: 970px) {
+  article {
+    flex-direction: row;
+    max-width: 700px;
+  }
+
+  article header,
+  article footer {
+    padding: 0;
+    margin: 0;
+  }
+
+  article header {
+    margin-bottom: 1.5rem;
+  }
+
+  article header h1 {
+    font-size: 1.3rem;
+  }
+
+  div.card-content {
+    padding: 1.5rem;
+  }
+
+  article>img {
+    height: inherit;
+    width: 40%;
+    border-radius: var(--border-radius-lenght) 0 0 var(--border-radius-lenght);
+    object-fit: cover;
+    object-position: 0 100%;
+  }
+
+  button.share-button.active:hover,
+  button.share-button.active:hover svg path {
+    fill: var(--white);
+    background-color: var(--desaturated-dark-blue);
+    transition: background-color .3s ease;
+  }
+
+  article .share-container.active {
+    top: -200%;
+    left: 60%;
+    padding: 1rem;
+    width: 70%;
+    height: 145%;
+    border-radius: var(--border-radius-lenght);
+
+    justify-content: center;
+    font-size: .83rem;
+  }
+
+  article .share-container.active::after {
+    content: "";
+    position: absolute;
+    bottom: -25%;
+    left: 45%;
+
+    width: 0;
+    height: 0;
+
+    --border-lenght: 15px;
+    border-left: var(--border-lenght) solid transparent;
+    border-right: var(--border-lenght) solid transparent;
+
+    border-top: var(--border-lenght) solid #48556a;
+  }
 }
