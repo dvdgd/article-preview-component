@@ -166,16 +166,16 @@ article .share-container.active {
   }
 
   article header h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   div.card-content {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   article>img {
     height: inherit;
-    width: 40%;
+    width: 35%;
     border-radius: var(--border-radius-lenght) 0 0 var(--border-radius-lenght);
     object-fit: cover;
     object-position: 0 100%;
